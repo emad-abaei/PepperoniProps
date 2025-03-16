@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# 🍕 PepperoniProps
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PepperoniProps is a modern pizza ordering app built with React, TypeScript, Redux Toolkit, and React Router. It provides a smooth and interactive user experience, allowing customers to browse the menu, add items to the cart, place orders, and track them in real-time.
 
-Currently, two official plugins are available:
+## 🖼️ Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📌 Home Screen
 
-## Expanding the ESLint configuration
+![Home Screen](screenshots/project-pepperoniprops.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Features
 
-- Configure the top-level `parserOptions` property like this:
+- 📜 **Browse Menu** – View a selection of delicious pizzas with detailed descriptions.
+- 🛒 **Cart Management** – Add, remove, and update items seamlessly.
+- 📦 **Order Tracking** – Track orders with unique order IDs.
+- 🔥 **Priority Orders** – Mark an order as priority for faster processing.
+- 💾 **Persistent State** – Redux Toolkit ensures data consistency.
+- ⚡ **Optimized Performance** – Uses lazy loading and error boundaries.
+- 🎨 **Modern UI** – Styled with Tailwind CSS for a sleek and responsive design.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Tools & Technologies
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- ⚛️ **React** – Component-based UI development.
+- 🟦 **TypeScript** – Static typing for better reliability.
+- 🏗 **Redux Toolkit** – Simplified and scalable state management.
+- 🚦 **React Router** – Seamless navigation between pages.
+- 🎨 **Tailwind CSS** – Utility-first styling for a polished UI.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🔗 Live Demo
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- 🌍 [Try PepperoniProps Now!](https://pepperoniprops-emadabaei.vercel.app)
+
+## 🧪 Testing
+
+- Tests are not implemented yet, but they will be added soon using **Vitest** and **React Testing Library** to ensure reliability and maintainability.
+
+## 📂 Setup & Installation
+
+1️⃣ Clone the repository:
+git clone https://github.com/emad-abaei/PepperoniProps.git
+
+2️⃣ Navigate to the project directory:
+cd PepperoniProps
+
+3️⃣ Install dependencies:
+npm install
+
+4️⃣ Run the development server:
+npm run dev
+
+## 🙌 Acknowledgments
+
+This project was originally inspired by a course from **Jonas Schmedtmann**. While the core idea comes from the course, I have made some enhancements, including:
+
+✅ **Migrating from JavaScript to TypeScript** for better type safety and maintainability.
+✅ **Refactoring and optimizing the codebase** for cleaner, more efficient development.
+
+## 📩 Contributing
+
+Contributions are welcome! Feel free to submit issues.
+
+## 📜 License
+
+![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
+This project is licensed under the MIT License.
