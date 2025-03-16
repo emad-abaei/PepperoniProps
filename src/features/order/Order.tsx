@@ -43,8 +43,9 @@ function Order() {
           {priority && (
             <span
               className='rounded-full bg-red-500 px-3 py-1 text-sm font-semibold tracking-wide text-red-50 uppercase'
-              aria-label='Priority order'>
-              <span aria-hidden='true'>Priority</span>
+              role='status'
+              aria-live='polite'>
+              Priority
             </span>
           )}
           <span
