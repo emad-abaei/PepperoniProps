@@ -6,7 +6,15 @@ PepperoniProps is a modern pizza ordering app built with React, TypeScript, Redu
 
 ### 📌 Home Screen
 
-![Home Screen](screenshots/project-pepperoniprops.png)
+![Home Screen](screenshots/project-pepperoniprops-home.png)
+
+### 📌 Menu Screen
+
+![Menu Screen](screenshots/project-pepperoniprops-menu.png)
+
+### 📌 Order Screen
+
+![Order Screen](screenshots/project-pepperoniprops-order.png)
 
 ## 🚀 Features
 
@@ -53,6 +61,7 @@ npm run dev
 This project was originally inspired by a course from **Jonas Schmedtmann**. While the core idea comes from the course, I have made some enhancements, including:
 
 ✅ **Migrating from JavaScript to TypeScript** for better type safety and maintainability.
+
 ✅ **Refactoring and optimizing the codebase** for cleaner, more efficient development.
 
 ## 📩 Contributing
