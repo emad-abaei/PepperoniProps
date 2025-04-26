@@ -1,4 +1,3 @@
-// helpers.test.ts
 import { describe, it, expect, vi } from "vitest";
 import {
   formatCurrency,
@@ -18,7 +17,6 @@ describe("formatDate", () => {
     const dateStr = "2025-04-26T14:30:00Z"; // UTC time
     const formatted = formatDate(dateStr);
     expect(typeof formatted).toBe("string");
-    // Optional: More specific expectation depending on timezone
   });
 });
 

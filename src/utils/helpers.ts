@@ -1,7 +1,7 @@
 export function formatCurrency(value: number) {
   return new Intl.NumberFormat("en", {
     style: "currency",
-    currency: "EUR",
+    currency: "EUR"
   }).format(value);
 }
 
@@ -10,7 +10,7 @@ export function formatDate(dateStr: string) {
     day: "numeric",
     month: "short",
     hour: "2-digit",
-    minute: "2-digit",
+    minute: "2-digit"
   }).format(new Date(dateStr));
 }
 
@@ -20,8 +20,7 @@ export function calcMinutesLeft(dateStr: string) {
   return Math.round((d2 - d1) / 60000);
 }
 
-// https://uibakery.io/regex-library/phone-number
-export const isValidPhone = (str: string) =>
-  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str,
-  );
+export const isValidPhone = (str: string) => {
+  const cleaned = str.replace(/[^0-9]/g, ""); // Remove spaces, dashes, parentheses
+  return cleaned.length >= 10 && cleaned.length <= 15;
+};
