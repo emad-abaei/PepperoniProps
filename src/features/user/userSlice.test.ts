@@ -25,15 +25,13 @@ function mockGeolocation(
     };
   }
 
-  (global.navigator.geolocation.getCurrentPosition as any) = vi.fn(
-    (success, error) => {
-      if (successImpl)
-        successImpl({
-          coords: { latitude: 0, longitude: 0 }
-        } as GeolocationPosition);
-      if (errorImpl) errorImpl(new Error("User denied Geolocation") as any);
-    }
-  );
+  (global.navigator.geolocation.getCurrentPosition as any) = vi.fn(() => {
+    if (successImpl)
+      successImpl({
+        coords: { latitude: 0, longitude: 0 }
+      } as GeolocationPosition);
+    if (errorImpl) errorImpl(new Error("User denied Geolocation") as any);
+  });
 }
 
 beforeEach(() => {
