@@ -12,7 +12,7 @@ function Menu() {
         Our Menu
       </h2>
       <ul className='divide-y divide-stone-200' role='list' aria-live='polite'>
-        {menu.map((pizza) => {
+        {menu.map((pizza: PizzaType) => {
           return <MenuItem pizza={pizza} key={pizza.pizzaId} />;
         })}
       </ul>
