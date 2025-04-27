@@ -23,7 +23,7 @@ const sampleItem: CartItemType = {
 
 describe("cartSlice", () => {
   it("should return the initial state", () => {
-    expect(cartReducer(undefined, { type: undefined })).toEqual(initialState);
+    expect(cartReducer(undefined, { type: "" })).toEqual(initialState);
   });
 
   it("should handle addItem", () => {
