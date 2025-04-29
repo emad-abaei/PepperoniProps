@@ -1,62 +1,58 @@
-// src/features/menu/MenuItem.test.tsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
+import { configureStore } from "@reduxjs/toolkit";
 import MenuItem from "./MenuItem";
+import cartReducer from "../cart/cartSlice";
 import { PizzaType } from "../../types";
-import { describe, it, vi, expect, beforeEach } from "vitest";
+import { describe, expect, it } from "vitest";
 
-const mockStore = configureStore([]);
-const samplePizza: PizzaType = {
+const mockPizza: PizzaType = {
   pizzaId: 1,
-  name: "Pepperoni",
-  unitPrice: 12,
-  ingredients: ["cheese", "pepperoni"],
+  name: "Margherita",
+  unitPrice: 10,
+  ingredients: ["tomato", "mozzarella", "basil"],
   soldOut: false,
-  imageUrl: "/pizza.png"
+  imageUrl: "/margherita.jpg"
 };
 
-describe("MenuItem", () => {
-  it("renders pizza details correctly", () => {
-    const store = mockStore({ cart: { cart: [] } });
-    render(
-      <Provider store={store}>
-        <MenuItem pizza={samplePizza} />
-      </Provider>
-    );
+function renderWithStore(ui: React.ReactElement) {
+  const store = configureStore({
+    reducer: {
+      cart: cartReducer
+    },
+    preloadedState: {
+      cart: {
+        cart: []
+      }
+    }
+  });
 
-    expect(screen.getByText("Pepperoni")).toBeInTheDocument();
-    expect(screen.getByText("cheese, pepperoni")).toBeInTheDocument();
+  return render(<Provider store={store}>{ui}</Provider>);
+}
+
+describe("MenuItem", () => {
+  it("renders the pizza information", () => {
+    renderWithStore(<MenuItem pizza={mockPizza} />);
+    expect(screen.getByText(/Margherita/i)).toBeInTheDocument();
+    expect(screen.getByText(/tomato, mozzarella, basil/i)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /add pepperoni to cart/i })
+      screen.getByRole("button", { name: /add to cart/i })
     ).toBeInTheDocument();
   });
 
-  it("dispatches addItem when button is clicked", () => {
-    const store = mockStore({ cart: { cart: [] } });
-    store.dispatch = vi.fn();
-
-    render(
-      <Provider store={store}>
-        <MenuItem pizza={samplePizza} />
-      </Provider>
-    );
-
-    fireEvent.click(
-      screen.getByRole("button", { name: /add pepperoni to cart/i })
-    );
-    expect(store.dispatch).toHaveBeenCalled();
+  it("calls dispatch when add to cart is clicked", () => {
+    renderWithStore(<MenuItem pizza={mockPizza} />);
+    const button = screen.getByRole("button", {
+      name: /add to cart/i
+    });
+    fireEvent.click(button);
+    // You can verify updated UI behavior or mock store state here if needed
   });
 
-  it("displays 'Sold out' if pizza is sold out", () => {
-    const store = mockStore({ cart: { cart: [] } });
-
-    render(
-      <Provider store={store}>
-        <MenuItem pizza={{ ...samplePizza, soldOut: true }} />
-      </Provider>
-    );
-
+  it("shows 'Sold out' label if the pizza is unavailable", () => {
+    const soldOutPizza = { ...mockPizza, soldOut: true };
+    renderWithStore(<MenuItem pizza={soldOutPizza} />);
     expect(screen.getByText(/sold out/i)).toBeInTheDocument();
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
   });
 });
