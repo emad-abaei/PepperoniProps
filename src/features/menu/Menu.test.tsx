@@ -1,9 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import store from "../../store";
-import Menu from "./Menu";
 import { useLoaderData } from "react-router";
 import { Provider } from "react-redux";
+import store from "../../store";
+import Menu from "./Menu";
 
 vi.mock("react-router", () => ({
   useLoaderData: vi.fn()
@@ -22,7 +22,7 @@ const mockPizzas = [
 
 describe("Menu", () => {
   it("renders menu items from loader data", () => {
-    (useLoaderData as vi.Mock).mockReturnValue(mockPizzas);
+    (useLoaderData as ReturnType<typeof vi.fn>).mockReturnValue(mockPizzas);
 
     render(
       <Provider store={store}>
