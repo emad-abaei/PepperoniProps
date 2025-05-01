@@ -1,15 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { MemoryRouter } from "react-router";
 import cartReducer from "./cartSlice";
 import CartOverview from "./CartOverview";
 
 function renderWithStore(preloadedState: any) {
+  const rootReducer = combineReducers({
+    cart: cartReducer
+  });
+
   const store = configureStore({
-    reducer: {
-      cart: cartReducer
-    },
+    reducer: rootReducer,
     preloadedState
   });
 
