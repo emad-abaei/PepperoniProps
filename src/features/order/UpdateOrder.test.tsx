@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import UpdateOrder from "./UpdateOrder";
 import { vi } from "vitest";
+import type { Mock } from "vitest";
 
 // Mocks react-router's useFetcher
 vi.mock("react-router", async () => {
@@ -25,7 +25,7 @@ describe("UpdateOrder", () => {
   });
 
   test("renders the form with a button", () => {
-    (useFetcher as vi.Mock).mockReturnValue({
+    (useFetcher as Mock).mockReturnValue({
       state: "idle",
       Form: MockForm
     });
@@ -39,7 +39,7 @@ describe("UpdateOrder", () => {
   });
 
   test("disables the button and shows updating text while submitting", () => {
-    (useFetcher as vi.Mock).mockReturnValue({
+    (useFetcher as Mock).mockReturnValue({
       state: "submitting",
       Form: MockForm
     });
