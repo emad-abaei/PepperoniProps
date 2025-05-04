@@ -1,5 +1,6 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
-import Order from "./Order";
+import Order from "../../../src/features/order/Order";
 import { vi } from "vitest";
 import type { Mock } from "vitest";
 
@@ -13,12 +14,11 @@ vi.mock("react-router", async () => {
   };
 });
 
-// Stub child components
-vi.mock("./OrderItem", () => ({
+vi.mock("../../../src/features/order/OrderItem", () => ({
   default: () => <li>Mocked Order Item</li>
 }));
 
-vi.mock("./UpdateOrder", () => ({
+vi.mock("../../../src/features/order/UpdateOrder", () => ({
   default: () => <div>Mocked UpdateOrder</div>
 }));
 

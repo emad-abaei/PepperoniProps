@@ -1,9 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { vi, type Mock } from "vitest";
-import CreateOrder from "./CreateOrder";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { PRIORITY_RATE } from "../../utils/constants";
+import { vi, type Mock } from "vitest";
+import CreateOrder from "../../../src/features/order/CreateOrder";
+import { PRIORITY_RATE } from "../../../src/utils/constants";
 
 // Mock react-redux
 vi.mock("react-redux", async () => {
