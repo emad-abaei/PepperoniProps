@@ -1,7 +1,8 @@
-import { describe, it, vi, expect, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import React from "react";
 import { Provider } from "react-redux";
-import store from "../../store";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, vi, expect, beforeEach } from "vitest";
+import store from "../../../src/store";
 
 // Partial mock for react-router
 vi.mock("react-router", async () => {
@@ -26,7 +27,7 @@ vi.mock("react-redux", async () => {
 });
 
 import { MemoryRouter } from "react-router";
-import CreateUser from "./CreateUser";
+import CreateUser from "../../../src/features/user/CreateUser";
 
 describe("CreateUser", () => {
   beforeEach(() => {

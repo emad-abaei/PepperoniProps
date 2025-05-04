@@ -1,9 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../user/userSlice";
-import Username from "./Username";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import userReducer from "../../../src/features/user/userSlice";
+import Username from "../../../src/features/user/Username";
 
 // A helper to render with a custom Redux state
 function renderWithState(initialState: any) {
