@@ -1,8 +1,9 @@
-import { describe, it, expect, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
-import Cart from "./Cart";
+import React from "react";
 import * as reactRedux from "react-redux";
 import { MemoryRouter } from "react-router";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import Cart from "../../../src/features/cart/Cart";
 
 vi.mock("react-redux", async () => {
   const actual =
@@ -14,11 +15,11 @@ vi.mock("react-redux", async () => {
   };
 });
 
-vi.mock("./EmptyCart", () => ({
+vi.mock("../../../src/features/cart/EmptyCart", () => ({
   default: () => <div>EmptyCartMock</div>
 }));
 
-vi.mock("./CartItem", () => ({
+vi.mock("../../../src/features/cart/CartItem", () => ({
   default: () => <div>CartItemMock Veggie Pizza</div>
 }));
 
