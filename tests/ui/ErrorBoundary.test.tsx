@@ -1,6 +1,7 @@
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import ErrorFallback from "./ErrorBoundary";
 import { vi } from "vitest";
+import ErrorFallback from "../../src/ui/ErrorBoundary";
 
 describe("ErrorFallback", () => {
   it("displays the error message and retry button", () => {

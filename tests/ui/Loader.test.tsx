@@ -1,5 +1,6 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
-import Loader from "./Loader";
+import Loader from "../../src/ui/Loader";
 
 describe("Loader", () => {
   it("renders loader with accessibility attributes", () => {
