@@ -1,14 +1,15 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { MemoryRouter, Route, Routes } from "react-router";
-import userReducer from "./features/user/userSlice";
-import Home from "./ui/Home";
+import { render, screen } from "@testing-library/react";
 import { vi } from "vitest";
-import type { UserStateType } from "./types";
+import userReducer from "../src/features/user/userSlice";
+import Home from "../src/ui/Home";
+import type { UserStateType } from "../src/types";
 
 // Mock CreateUser component so it renders predictable text
-vi.mock("./features/user/CreateUser", () => ({
+vi.mock("../src/features/user/CreateUser", () => ({
   default: () => <div>Mocked CreateUser</div>
 }));
 

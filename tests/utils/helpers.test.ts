@@ -4,7 +4,7 @@ import {
   formatDate,
   calcMinutesLeft,
   isValidPhone
-} from "./helpers";
+} from "../../src/utils/helpers";
 
 describe("formatCurrency", () => {
   it("formats number to EUR currency", () => {
