@@ -1,8 +1,8 @@
+import React from "react";
+import { useRouteError, MemoryRouter } from "react-router";
 import { render, screen } from "@testing-library/react";
-import Error from "./Error";
 import { vi } from "vitest";
-import { useRouteError } from "react-router";
-import { MemoryRouter } from "react-router";
+import Error from "../../src/ui/Error";
 
 // Mock react-router
 vi.mock("react-router", async () => {
