@@ -1,9 +1,9 @@
 import { it, expect, vi, beforeEach, beforeAll } from "vitest";
-import { fetchAddress } from "./userSlice";
-import { getAddress } from "../../services/apiGeocoding";
+import { fetchAddress } from "../../../src/features/user/userSlice";
+import { getAddress } from "../../../src/services/apiGeocoding";
 
 // Mock the getAddress API
-vi.mock("../../services/apiGeocoding", () => ({
+vi.mock("../../../src/services/apiGeocoding", () => ({
   getAddress: vi.fn()
 }));
 
@@ -25,15 +25,13 @@ function mockGeolocation(
     };
   }
 
-  (global.navigator.geolocation.getCurrentPosition as any) = vi.fn(
-    () => {
-      if (successImpl)
-        successImpl({
-          coords: { latitude: 0, longitude: 0 }
-        } as GeolocationPosition);
-      if (errorImpl) errorImpl(new Error("User denied Geolocation") as any);
-    }
-  );
+  (global.navigator.geolocation.getCurrentPosition as any) = vi.fn(() => {
+    if (successImpl)
+      successImpl({
+        coords: { latitude: 0, longitude: 0 }
+      } as GeolocationPosition);
+    if (errorImpl) errorImpl(new Error("User denied Geolocation") as any);
+  });
 }
 
 beforeEach(() => {
