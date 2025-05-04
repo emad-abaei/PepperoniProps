@@ -1,19 +1,19 @@
-import { render, screen } from "@testing-library/react";
-import Header from "./Header";
-import { MemoryRouter } from "react-router";
 import React from "react";
+import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router";
 import { vi } from "vitest";
+import Header from "../../src/ui/Header";
 
 // Mock children components
-vi.mock("../features/order/SearchOrder", () => ({
+vi.mock("../../src/features/order/SearchOrder", () => ({
   default: () => <div>Mocked SearchOrder</div>
 }));
 
-vi.mock("../features/user/Username", () => ({
+vi.mock("../../src/features/user/Username", () => ({
   default: () => <div>Mocked Username</div>
 }));
 
-vi.mock("./PizzaImage", () => ({
+vi.mock("../../src/ui/PizzaImage", () => ({
   default: ({ className }: { className?: string }) => (
     <img className={className} alt='Mocked Pizza' />
   )

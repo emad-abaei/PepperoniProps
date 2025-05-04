@@ -1,7 +1,8 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
-import Home from "./Home";
 import { useSelector } from "react-redux";
 import { vi, type Mock } from "vitest";
+import Home from "../../src/ui/Home";
 
 // Mock dependencies
 vi.mock("react-redux", async () => {
@@ -12,11 +13,11 @@ vi.mock("react-redux", async () => {
   };
 });
 
-vi.mock("../features/user/CreateUser", () => ({
+vi.mock("../../src/features/user/CreateUser", () => ({
   default: () => <div>Mocked CreateUser</div>
 }));
 
-vi.mock("./Button", () => ({
+vi.mock("../../src/ui/Button", () => ({
   default: ({ to, children }: any) => <a href={to}>{children}</a>
 }));
 
