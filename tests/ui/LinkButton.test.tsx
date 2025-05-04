@@ -1,8 +1,8 @@
 import React from "react";
 import { MemoryRouter } from "react-router";
 import { render, screen, fireEvent } from "@testing-library/react";
-import LinkButton from "./LinkButton";
 import { vi } from "vitest";
+import LinkButton from "../../src/ui/LinkButton";
 
 const mockNavigate = vi.fn();
 
