@@ -1,9 +1,10 @@
-import { describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { useLoaderData } from "react-router";
+import React from "react";
 import { Provider } from "react-redux";
-import store from "../../store";
-import Menu from "./Menu";
+import { useLoaderData } from "react-router";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import store from "../../../src/store";
+import Menu from "../../../src/features/menu/Menu";
 
 vi.mock("react-router", () => ({
   useLoaderData: vi.fn()
