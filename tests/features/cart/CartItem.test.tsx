@@ -1,7 +1,8 @@
-import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
-import CartItem from "./CartItem";
+import React from "react";
 import * as reactRedux from "react-redux";
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import CartItem from "../../../src/features/cart/CartItem";
 
 beforeAll(() => {
   vi.mock("react-redux", async () => ({
@@ -11,16 +12,16 @@ beforeAll(() => {
 });
 
 // Mock child components
-vi.mock("./DeleteItem", () => ({
+vi.mock("../../../src/features/cart/DeleteItem", () => ({
   default: () => <div>Mocked DeleteItem</div>
 }));
 
-vi.mock("./UpdateItemQuantity", () => ({
+vi.mock("../../../src/features/cart/UpdateItemQuantity", () => ({
   default: () => <div>Mocked UpdateItemQuantity</div>
 }));
 
 // Mock helper
-vi.mock("../../utils/helpers", () => ({
+vi.mock("../../../src/utils/helpers", () => ({
   formatCurrency: (val: number) => `$${val.toFixed(2)}`
 }));
 
