@@ -1,7 +1,7 @@
-import { describe, it, expect, vi } from "vitest";
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { useDispatch } from "react-redux";
-import UpdateItemQuantity from "./UpdateItemQuantity";
+import { describe, it, expect, vi } from "vitest";
+import UpdateItemQuantity from "../../../src/features/cart/UpdateItemQuantity";
 
 // Mock the Redux dispatch function
 const mockDispatch = vi.fn();

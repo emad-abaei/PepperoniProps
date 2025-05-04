@@ -1,9 +1,10 @@
-import { describe, it, vi, expect } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import React from "react";
 import { Provider } from "react-redux";
-import store from "../../store";
-import DeleteItem from "./DeleteItem";
-import * as cartSlice from "./cartSlice";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, vi, expect } from "vitest";
+import store from "../../../src/store";
+import * as cartSlice from "../../../src/features/cart/cartSlice";
+import DeleteItem from "../../../src/features/cart/DeleteItem";
 
 describe("DeleteItem", () => {
   it("dispatches deleteItem when clicked", () => {
