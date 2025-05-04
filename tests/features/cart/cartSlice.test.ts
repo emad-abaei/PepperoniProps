@@ -8,8 +8,8 @@ import cartReducer, {
   getTotalCartQuantity,
   getTotalCartPrice,
   getCurrentQuantityById
-} from "./cartSlice";
-import { CartStateType, CartItemType } from "../../types";
+} from "../../../src/features/cart/cartSlice";
+import { CartStateType, CartItemType } from "../../../src/types";
 
 const initialState: CartStateType = { cart: [] };
 
