@@ -1,10 +1,9 @@
-// src/services/apiGeocoding.test.ts
 import { getAddress } from "./apiGeocoding";
 import { vi } from "vitest";
 
 describe("getAddress", () => {
   beforeEach(() => {
-    vi.restoreAllMocks(); // Reset mocks between tests
+    vi.restoreAllMocks();
   });
 
   it("returns address data on successful fetch", async () => {
