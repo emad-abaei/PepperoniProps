@@ -1,7 +1,7 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
-import UpdateOrder from "./UpdateOrder";
-import { vi } from "vitest";
-import type { Mock } from "vitest";
+import { vi, type Mock } from "vitest";
+import UpdateOrder from "../../../src/features/order/UpdateOrder";
 
 // Mocks react-router's useFetcher
 vi.mock("react-router", async () => {
