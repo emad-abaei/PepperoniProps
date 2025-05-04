@@ -1,9 +1,9 @@
+import React from "react";
+import { useNavigate } from "react-router";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import SearchOrder from "./SearchOrder";
-import { vi } from "vitest";
-import { useNavigate } from "react-router";
-import type { Mock } from "vitest";
+import { vi, type Mock } from "vitest";
+import SearchOrder from "../../../src/features/order/SearchOrder";
 
 // Mock useNavigate from react-router
 vi.mock("react-router", async () => {

@@ -1,7 +1,8 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
-import OrderItem from "./OrderItem";
-import { formatCurrency } from "../../utils/helpers";
-import { OrderedPizzaType } from "../../types";
+import OrderItem from "../../../src/features/order/OrderItem";
+import { formatCurrency } from "../../../src/utils/helpers";
+import { OrderedPizzaType } from "../../../src/types";
 
 describe("OrderItem", () => {
   const mockItem: OrderedPizzaType = {
