@@ -1,5 +1,6 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
-import AppLayout from "./AppLayout";
+import AppLayout from "../../src/ui/AppLayout";
 import { useNavigation } from "react-router";
 import { vi, type Mock } from "vitest";
 
@@ -13,15 +14,15 @@ vi.mock("react-router", async () => {
   };
 });
 
-vi.mock("./Header", () => ({
+vi.mock("../../src/ui/Header", () => ({
   default: () => <header>Mocked Header</header>
 }));
 
-vi.mock("./Loader", () => ({
+vi.mock("../../src/ui/Loader", () => ({
   default: () => <div>Mocked Loader</div>
 }));
 
-vi.mock("../features/cart/CartOverview", () => ({
+vi.mock("../../src/features/cart/CartOverview", () => ({
   default: () => <footer>Mocked CartOverview</footer>
 }));
 
