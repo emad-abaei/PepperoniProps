@@ -1,5 +1,5 @@
-import { getAddress } from "./apiGeocoding";
 import { vi } from "vitest";
+import { getAddress } from "../../src/services/apiGeocoding";
 
 describe("getAddress", () => {
   beforeEach(() => {

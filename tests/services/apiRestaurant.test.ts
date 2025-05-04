@@ -1,5 +1,10 @@
-import { getMenu, getOrder, createOrder, updateOrder } from "./apiRestaurant";
 import { vi } from "vitest";
+import {
+  getMenu,
+  getOrder,
+  createOrder,
+  updateOrder
+} from "../../src/services/apiRestaurant";
 
 describe("apiRestaurant", () => {
   beforeEach(() => {
