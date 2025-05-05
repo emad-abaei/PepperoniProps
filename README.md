@@ -42,10 +42,6 @@ PepperoniProps is a modern pizza ordering app built with React, TypeScript, Redu
 
 ## 🧪 Testing
 
-- Tests are not implemented yet, but they will be added soon using **Vitest** and **React Testing Library** to ensure reliability and maintainability.
-
-## 🧪 Testing
-
 The app includes a growing test suite covering core components, Redux logic, and service functions to ensure stability and reliability.
 
 - 🔍 **React Testing Library** for user-centric unit and integration testing.
@@ -88,7 +84,3 @@ Contributions are welcome! Feel free to submit issues.
 
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 This project is licensed under the MIT License.
-
-```
-
-```
