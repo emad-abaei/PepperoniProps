@@ -53,9 +53,7 @@ The app includes a growing test suite covering core components, Redux logic, and
 - 🧪 All tests are colocated under a dedicated `/tests` folder, mirroring the app structure.
 - 🛠 Integration and end-to-end tests planned for future development.
 
-To run tests:
-
-```bash
+⏺️ To run tests:
 npm run test
 
 ## 📂 Setup & Installation
@@ -82,7 +80,6 @@ This project was originally inspired by a course from **Jonas Schmedtmann**. Whi
 
 ✅ **Implemented a modern testing setup** using Vitest and Testing Library for confidence and maintainability.
 
-
 ## 📩 Contributing
 
 Contributions are welcome! Feel free to submit issues.
@@ -91,4 +88,7 @@ Contributions are welcome! Feel free to submit issues.
 
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 This project is licensed under the MIT License.
+
+```
+
 ```
