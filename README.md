@@ -25,6 +25,7 @@ PepperoniProps is a modern pizza ordering app built with React, TypeScript, Redu
 - 💾 **Persistent State** – Redux Toolkit ensures data consistency.
 - ⚡ **Optimized Performance** – Uses lazy loading and error boundaries.
 - 🎨 **Modern UI** – Styled with Tailwind CSS for a sleek and responsive design.
+- 🧪 **Test Coverage** – Components, Redux slices, and services covered with unit and integration tests.
 
 ## 🛠️ Tools & Technologies
 
@@ -33,6 +34,7 @@ PepperoniProps is a modern pizza ordering app built with React, TypeScript, Redu
 - 🏗 **Redux Toolkit** – Simplified and scalable state management.
 - 🚦 **React Router** – Seamless navigation between pages.
 - 🎨 **Tailwind CSS** – Utility-first styling for a polished UI.
+- 🧪 **Vitest & React Testing Library** – Reliable and fast testing setup for components and business logic.
 
 ## 🔗 Live Demo
 
@@ -41,6 +43,20 @@ PepperoniProps is a modern pizza ordering app built with React, TypeScript, Redu
 ## 🧪 Testing
 
 - Tests are not implemented yet, but they will be added soon using **Vitest** and **React Testing Library** to ensure reliability and maintainability.
+
+## 🧪 Testing
+
+The app includes a growing test suite covering core components, Redux logic, and service functions to ensure stability and reliability.
+
+- 🔍 **React Testing Library** for user-centric unit and integration testing.
+- ⚡ **Vitest** as a fast, Vite-native testing framework.
+- 🧪 All tests are colocated under a dedicated `/tests` folder, mirroring the app structure.
+- 🛠 Integration and end-to-end tests planned for future development.
+
+To run tests:
+
+```bash
+npm run test
 
 ## 📂 Setup & Installation
 
@@ -64,6 +80,9 @@ This project was originally inspired by a course from **Jonas Schmedtmann**. Whi
 
 ✅ **Refactoring and optimizing the codebase** for cleaner, more efficient development.
 
+✅ **Implemented a modern testing setup** using Vitest and Testing Library for confidence and maintainability.
+
+
 ## 📩 Contributing
 
 Contributions are welcome! Feel free to submit issues.
@@ -72,3 +91,4 @@ Contributions are welcome! Feel free to submit issues.
 
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 This project is licensed under the MIT License.
+```
